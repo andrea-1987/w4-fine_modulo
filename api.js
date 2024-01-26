@@ -1,7 +1,6 @@
 const url = "https://striveschool-api.herokuapp.com/api/product/";
 const key =
-"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWIxMTk1NDkxM2Y2NTAwMThkMDkwNjYiLCJpYXQiOjE3MDYyMjAxODMsImV4cCI6MTcwNzQyOTc4M30.zymE4u6MC23Yca3-2L7lOTh1GWWHpW9LM_0HhWEvm5Y";
-
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWIxMTk1NDkxM2Y2NTAwMThkMDkwNjYiLCJpYXQiOjE3MDYyODcwNTUsImV4cCI6MTcwNzQ5NjY1NX0.u_Z9UkHsh6WT2Ilmf-wdWyDRrGrbBpO-Ckmm75pfOjI";
 import { cardCreater } from "./components.js";
 export async function fetchCreateCard() {
     const urlImg = document.getElementById("urlImg").value;
@@ -82,7 +81,7 @@ console.log("aiuto", error);
     }console.log(dati)
   }// Chiamata GET 
 
-// export const remove=document.querySelectorAll(".delete");
+// const remove=document.querySelectorAll(".delete");
 
 // addListeners(remove, async function fetchDelete(ev) {
 // const id=ev.target.closest(".cardFind").id
@@ -99,5 +98,9 @@ console.log("aiuto", error);
 //       console.error("Eliminazione fallita:", error);
 //     }
 // });
-const params= new URLSearchParams(location.search)
-export const id = params.get("id")
+
+document.addEventListener("DOMContentLoaded",
+fetchCreateCard,
+fetchGet,
+fetchPosts
+)

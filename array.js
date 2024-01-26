@@ -8,7 +8,7 @@ export let animeList =
       price: 30,
       userId:"admin"
     }
-   
+
   
 
   

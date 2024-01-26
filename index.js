@@ -1,10 +1,11 @@
 
 import { cardCreater } from "./components.js";
-import {fetchPosts,fetchCreateCard,fetchGet,id} from "./api.js";
+import {fetchPosts,fetchCreateCard,fetchGet} from "./api.js";
 
 
 const form = document.getElementById("form");
 // const card= document.querySelector(".card")
+
 fetchCreateCard()
 
 form.addEventListener("submit",  event=>{
@@ -16,31 +17,26 @@ fetchGet()
 
 
 
-cardfind.addEventListener('click', event => {
-  if (event.target.tagName === 'BUTTON') {
-      const card = event.target.closest('card');
-      const cardId = card.id;
+// cardfind.addEventListener('click', event => {
+//   if (event.target.tagName === 'BUTTON') {
+//       const card = event.target.closest('card');
+//       const cardId = card.id;
     
-         fetch(url + cardId, {
-          method: "DELETE",
-          cache: "no-cache",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${key}`,
-          }
-        })
-          .then(() => {
-            card.remove();
-        }).catch(err => { throw Error(err) });
-      }
-})
+//          fetch(url + cardId, {
+//           method: "DELETE",
+//           cache: "no-cache",
+//           headers: {
+//             "Content-Type": "application/json",
+//             Authorization: `Bearer ${key}`,
+//           }
+//         })
+//           .then(() => {
+//             card.remove();
+//         }).catch(err => { throw Error(err) });
+//       }
+// })
       
       
-  
-
-
-
-  remove.addEventListener("click",fetchDelete)
   
 
 document.addEventListener("DOMContentLoaded",{
