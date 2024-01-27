@@ -12,33 +12,33 @@ form.addEventListener("submit",  event=>{
 fetchGet();
 
 
-// async function fetchDelete(event) {
-//   if (event.target.tagName === 'BUTTON') {
-//     const idcard = event.target.id;
-//     const card = event.target.closest('.card');
+async function fetchDelete(event) {
+  if (event.target.tagName === 'BUTTON') {
+    const idcard = event.target.id;
+    const card = event.target.closest('.card');
     
-//     try {
-//       const response = await fetch(url + dati_id, {
-//         method: "DELETE",
-//         cache: "no-cache",
-//         headers: {
-//           "Content-Type": "application/json",
-//           Authorization: `Bearer ${key}`,
-//         }
-//       });
+    try {
+      const response = await fetch(url + idcard, {
+        method: "DELETE",
+        cache: "no-cache",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${key}`,
+        }
+      });
       
-//       if (response.ok) {
-//         card.remove();
-//       } else {
-//         console.error("Errore durante la richiesta di eliminazione:", response.status);
-//       }
-//     } catch (err) {
-//       console.error("Errore catch", err);
-//     }
-//   }
-// }
-// const elimina = document.querySelector(".elimina")
-// elimina.addEventListener("click", fetchDelete);
+      if (response.ok) {
+        card.remove();
+      } else {
+        console.error("Errore durante la richiesta di eliminazione:", response.status);
+      }
+    } catch (err) {
+      console.error("Errore catch", err);
+    }
+  }
+}
+const elimina = document.querySelector(".elimina")
+elimina.addEventListener("click", fetchDelete);
 
 
       

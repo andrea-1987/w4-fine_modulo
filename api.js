@@ -55,65 +55,28 @@ export async function fetchCreateCard() {
 //     }
 //   }//Chiamata Post
 
-// export async function fetchGet() {
-//     try {
-//       const response = await fetch(url, {
-//         method: "GET",
-//         cache:"no-cache",
-//         headers: {
-//           "Content-Type": "application/json",
-//           Authorization: `Bearer ${key}`,
-//         },
-//       });
-  
-//       if (!response.ok) {
-//         throw new Error(`Errore HTTP! Status: ${response.status}`);
-//       }
-  
-//       const data = await response.json();
-//       for (let dati of data) {
-//           cardCreater(dati)
-//           }
-          
-//         }
-//      catch (error) {
-// console.log("aiuto", error);
-//     }
-//   }// Chiamata GET 
-
 export async function fetchGet() {
-  try {
-    const response = await fetch(url, {
-      method: "GET",
-      cache: "no-cache",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${key}`,
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error(`Errore HTTP! Status: ${response.status}`);
-    }
-
-    const data = await response.json();
-    const eliminaButtons = document.querySelectorAll(".elimina");
-    const cards = document.querySelectorAll(".card");
-
-    for (let i = 0; i < data.length; i++) {
-      cardCreater(data[i]);
-      const datiId = data[i]._id;
-
-      // Verifica se ci sono elementi con la classe .elimina e .card
-      if (eliminaButtons.length > i && cards.length > i) {
-        eliminaButtons[i].addEventListener("click", () => handleEliminaClick(datiId, cards[i]));
+    try {
+      const response = await fetch(url, {
+        method: "GET",
+        cache:"no-cache",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${key}`,
+        },
+      });
+  
+      if (!response.ok) {
+        throw new Error(`Errore HTTP! Status: ${response.status}`);
       }
+  
+      const data = await response.json();
+      for (let dati of data) {
+          cardCreater(dati)
+          }
+          
+        }
+     catch (error) {
+console.log("aiuto", error);
     }
-  } catch (error) {
-    console.log("Errore durante la chiamata GET", error);
-  }
-}
-
-function handleEliminaClick(datiId, card) {
-  // Esegui l'azione di eliminazione qui usando datiId e card
-}
+  }// Chiamata GET 

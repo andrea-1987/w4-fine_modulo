@@ -1,6 +1,5 @@
 export const cardCreater=(dati)=>{
-    const cardFind = document.getElementById("cardFind");
-    cardFind.innerHTML+=`
+   return cardFind.innerHTML+=`
     <div class="card col-3 mx-3 my-3" style="width: 18rem;">
     <img src="${dati.imageUrl}" class="card-img-top col-3" alt="...">
     <div class="card-body">
