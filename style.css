@@ -2,22 +2,24 @@
     object-fit: cover;
     font-family: Arial, Helvetica, sans-serif;
 }
-
+body{
+    background-image: url("https://i.pinimg.com/736x/47/38/86/473886a56fba6e5df65dedb3d879eb2c.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+object-fit: cover;
+}
 nav{
+    display: flex;
     text-align: center;
     margin-inline:10px ;
     margin-block: 50px;
     border-bottom:1px solid black ;
 }
-.findButton{
-    border:none
-}
+
 main{
     margin-inline:10px ;
 }
-/* #cardFind{
-   
-} */
+
 #cardFind img{
     align-self: center;
 width: 286px;

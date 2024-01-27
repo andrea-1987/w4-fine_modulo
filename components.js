@@ -7,7 +7,8 @@ export const cardCreater=(dati)=>{
     <h5 class="card-title">${dati.name}</h5>
     <p class="card-text">${dati.description}</p>
     <p class="card-text">$ ${dati.price}</p>
-    <a href="#" class="btn btn-primary" class="dettagli">Mostra Dettagli</a>
-    <a href="#" class="btn btn-primary" class="delete">Delete</a>
+    <p class="card-text">id: ${dati._id}</p>
+    <a href="#" class="btn btn-primary" class="dettagli" >Mostra Dettagli</a>
+    <a href="#" class="btn btn-primary" class="elimina" >Delete</a>
     </div>`;
   }

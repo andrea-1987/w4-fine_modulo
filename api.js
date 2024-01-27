@@ -14,9 +14,7 @@ export async function fetchCreateCard() {
       brand: "Pierrot",
       imageUrl: urlImg,
       price: price,
-      userId: "",
     };
-  
     try {
       const resp = await fetch(url, {
         method: "POST",
@@ -30,77 +28,92 @@ export async function fetchCreateCard() {
       if (!resp.ok) {
         throw new Error(`Errore HTTP! Status: ${resp.status}`);
       }
+      
     } catch (error) {
-      console.log("create", error);
+      console.log("MI spiace card non creata", error);
     }
   }// Card Creata
 
-  import { animeList } from "./array.js";
-export async function fetchPosts() {
-    try {
-      const resp = await fetch(url, {
-        method: "POST",
-        mode: "no-corse",
-        cache: "no-cache",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${key}`,
-        },
-        body: JSON.stringify(animeList),
-      });
-      if (!resp.ok) {
-        throw new Error(`Errore HTTP! Status: ${resp.status}`);
-      }
-    } catch (error) {
-      console.log("postError",error);
-    }
-  }//Chiamata Post
-
-export async function fetchGet() {
-    try {
-      const response = await fetch(url, {
-        method: "GET",
-        cache:"no-cache",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${key}`,
-        },
-      });
-  
-      if (!response.ok) {
-        throw new Error(`Errore HTTP! Status: ${response.status}`);
-      }
-  
-      const data = await response.json();
-      for (let dati of data) {
-          cardCreater(dati)
-          
-        }
-    } catch (error) {
-console.log("aiuto", error);
-    }console.log(dati)
-  }// Chiamata GET 
-
-// const remove=document.querySelectorAll(".delete");
-
-// addListeners(remove, async function fetchDelete(ev) {
-// const id=ev.target.closest(".cardFind").id
+  // import { animeList } from "./array.js";
+// export async function fetchPosts() {
 //     try {
-//       await fetch(url + id, {
-//         method: "DELETE",
+//       const resp = await fetch(url, {
+//         method: "POST",
+//         mode: "no-corse",
 //         cache: "no-cache",
 //         headers: {
 //           "Content-Type": "application/json",
 //           Authorization: `Bearer ${key}`,
 //         },
+//         body: JSON.stringify(animeList),
 //       });
+//       if (!resp.ok) {
+//         throw new Error(`Errore HTTP! Status: ${resp.status}`);
+//       }
 //     } catch (error) {
-//       console.error("Eliminazione fallita:", error);
+//       console.log("postError",error);
 //     }
-// });
+//   }//Chiamata Post
 
-document.addEventListener("DOMContentLoaded",
-fetchCreateCard,
-fetchGet,
-fetchPosts
-)
+// export async function fetchGet() {
+//     try {
+//       const response = await fetch(url, {
+//         method: "GET",
+//         cache:"no-cache",
+//         headers: {
+//           "Content-Type": "application/json",
+//           Authorization: `Bearer ${key}`,
+//         },
+//       });
+  
+//       if (!response.ok) {
+//         throw new Error(`Errore HTTP! Status: ${response.status}`);
+//       }
+  
+//       const data = await response.json();
+//       for (let dati of data) {
+//           cardCreater(dati)
+//           }
+          
+//         }
+//      catch (error) {
+// console.log("aiuto", error);
+//     }
+//   }// Chiamata GET 
+
+export async function fetchGet() {
+  try {
+    const response = await fetch(url, {
+      method: "GET",
+      cache: "no-cache",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${key}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`Errore HTTP! Status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    const eliminaButtons = document.querySelectorAll(".elimina");
+    const cards = document.querySelectorAll(".card");
+
+    for (let i = 0; i < data.length; i++) {
+      cardCreater(data[i]);
+      const datiId = data[i]._id;
+
+      // Verifica se ci sono elementi con la classe .elimina e .card
+      if (eliminaButtons.length > i && cards.length > i) {
+        eliminaButtons[i].addEventListener("click", () => handleEliminaClick(datiId, cards[i]));
+      }
+    }
+  } catch (error) {
+    console.log("Errore durante la chiamata GET", error);
+  }
+}
+
+function handleEliminaClick(datiId, card) {
+  // Esegui l'azione di eliminazione qui usando datiId e card
+}

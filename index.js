@@ -1,48 +1,49 @@
-
 import { cardCreater } from "./components.js";
-import {fetchPosts,fetchCreateCard,fetchGet} from "./api.js";
+import {fetchCreateCard,fetchGet} from "./api.js";
 
 
 const form = document.getElementById("form");
-// const card= document.querySelector(".card")
-
-fetchCreateCard()
-
+const cardFind=document.querySelector(".cardFind")
 form.addEventListener("submit",  event=>{
   event.preventDefault();
  fetchCreateCard();
-window.location.reload()});// Create CARD
+ window.location.reload()
+});// Create CARD
+fetchGet();
 
-fetchGet()
 
-
-
-// cardfind.addEventListener('click', event => {
+// async function fetchDelete(event) {
 //   if (event.target.tagName === 'BUTTON') {
-//       const card = event.target.closest('card');
-//       const cardId = card.id;
+//     const idcard = event.target.id;
+//     const card = event.target.closest('.card');
     
-//          fetch(url + cardId, {
-//           method: "DELETE",
-//           cache: "no-cache",
-//           headers: {
-//             "Content-Type": "application/json",
-//             Authorization: `Bearer ${key}`,
-//           }
-//         })
-//           .then(() => {
-//             card.remove();
-//         }).catch(err => { throw Error(err) });
+//     try {
+//       const response = await fetch(url + dati_id, {
+//         method: "DELETE",
+//         cache: "no-cache",
+//         headers: {
+//           "Content-Type": "application/json",
+//           Authorization: `Bearer ${key}`,
+//         }
+//       });
+      
+//       if (response.ok) {
+//         card.remove();
+//       } else {
+//         console.error("Errore durante la richiesta di eliminazione:", response.status);
 //       }
-// })
+//     } catch (err) {
+//       console.error("Errore catch", err);
+//     }
+//   }
+// }
+// const elimina = document.querySelector(".elimina")
+// elimina.addEventListener("click", fetchDelete);
+
+
       
-      
+   document.addEventListener("DOMContentLoaded", () => {
+    cardCreater();
+    fetchGet()
+  });
   
-
-document.addEventListener("DOMContentLoaded",{
-  fetchPosts,
- fetchCreateCard,
- fetchGet,
-
-  cardCreater,
-})
