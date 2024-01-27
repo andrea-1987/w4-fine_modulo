@@ -9,5 +9,5 @@ export const cardCreater = (dati) => {
     <p class="card-text">id: ${dati._id}</p>
     <a href="#" class="btn btn-primary dettagli">Mostra Dettagli</a>
     <a href="#" class="btn btn-primary elimina" id="${dati._id}">Delete</a>
-    </div>`;
+      </div>`;
 };

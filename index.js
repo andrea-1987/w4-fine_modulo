@@ -1,17 +1,14 @@
 import { cardCreater } from "./components.js";
-import { fetchCreateCard, fetchGet, fetchDelete } from "./api.js";
+import { fetchCreateCard, fetchGet, fetchDelete, fetchPut } from "./api.js";
 
 
 const form = document.getElementById("form");
-const cardFind = document.querySelector(".cardFind")
+
 form.addEventListener("submit", event => {
   event.preventDefault();
   fetchCreateCard();
   window.location.reload()
 });// Create CARD
-// fetchGet();
-
-
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -19,8 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", event => {
     event.preventDefault();
     fetchCreateCard();
-    window.location.reload();
-
   });
 
   fetchGet();
@@ -30,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cardContainer.addEventListener('click', event => {
       if (event.target.classList.contains('elimina')) {
         const id = event.target.id; // Get id from button delete
-        fetchDelete(id, event); // Call Function  fetchDelete passing  tje id 
+        fetchDelete(id, event); // Call Function  fetchDelete passing  the id 
       }
     });
   } else {
@@ -38,5 +33,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   cardCreater();
-  fetchGet();
+
 });
+
+const change=document.getElementById("change")
+change.addEventListener("click", event=>{
+  event.preventDefault();
+fetchPut()
+window.location.reload()
+})
