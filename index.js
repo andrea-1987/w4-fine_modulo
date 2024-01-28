@@ -1,14 +1,9 @@
-import { cardCreater } from "./components.js";
-import { fetchCreateCard, fetchGet, fetchDelete, fetchPut } from "./api.js";
 
+import { fetchCreateCard, fetchGet, fetchDelete, fetchPut } from "./api.js";
+import { detailPage } from "./detail.js";
 
 const form = document.getElementById("form");
 
-form.addEventListener("submit", event => {
-  event.preventDefault();
-  fetchCreateCard();
-  window.location.reload()
-});// Create CARD
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -18,6 +13,12 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchCreateCard();
   });
 
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+    fetchCreateCard();
+    window.location.reload()
+  });// Create CARD
+  
   fetchGet();
 
   const cardContainer = document.getElementById('cardFind');
@@ -32,8 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("Elemento #cardFind non trovato nel DOM");
   }
 
-  cardCreater();
-
 });
 
 const change=document.getElementById("change")
@@ -42,3 +41,7 @@ change.addEventListener("click", event=>{
 fetchPut()
 window.location.reload()
 })
+
+// document.addEventListener("DOMContentLoaded", detailPage)
+
+

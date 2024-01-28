@@ -1,9 +1,8 @@
-const url = "https://striveschool-api.herokuapp.com/api/product/";
-const key =
+export const url = "https://striveschool-api.herokuapp.com/api/product/";
+export const key =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWIxMTk1NDkxM2Y2NTAwMThkMDkwNjYiLCJpYXQiOjE3MDYyODcwNTUsImV4cCI6MTcwNzQ5NjY1NX0.u_Z9UkHsh6WT2Ilmf-wdWyDRrGrbBpO-Ckmm75pfOjI";
+
 import { cardCreater } from "./components.js";
-
-
 
 export async function fetchCreateCard() {
 
@@ -55,11 +54,9 @@ export async function fetchGet() {
 
     const data = await response.json();
     for (let dati of data) {
-      cardCreater(dati)
-    }
-
+    cardCreater(dati)
   }
-  catch (error) {
+}catch (error) {
     console.log("aiuto", error);
   }
 }//  GET Fetch 
@@ -118,3 +115,4 @@ try {
   console.log("Error to change",error)
 }
 }
+
