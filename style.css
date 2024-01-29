@@ -22,9 +22,7 @@ nav img{
   color: gray;
   font-family: 'Times New Roman', Times, serif;
 }
-/* .tenor-gif-embed{
-  display: none;
-} */
+
 form{
 display: flex;
 flex-wrap: wrap;

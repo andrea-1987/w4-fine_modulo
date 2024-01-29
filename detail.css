@@ -20,13 +20,13 @@ aside {
   text-decoration: none;
 }
 .cardDetail {
-  width: 60%;
+  width: 100%;
   display: flex;
 }
 .cardDetail img {
   width:500 px ;
 }
-.sideBar h5,p{
+.cardDetail h5,p{
  font-size: xx-large;
  font-family: 'Times New Roman', Times, serif;
 }

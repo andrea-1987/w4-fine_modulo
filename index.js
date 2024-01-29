@@ -6,6 +6,7 @@ import { toggleForm } from "./helper.js";
 const form = document.getElementById("form");
 const enableForm = document.querySelector(".title");
 
+const loader=document.querySelector(".tenor-gif-embed")
 
 enableForm.addEventListener("click", toggleForm);
 loader.addEventListener("click",toggleForm)
