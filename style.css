@@ -12,9 +12,45 @@ nav {
   margin-block: 50px;
   color: white;
 }
+nav img{
+  width: 100px;
+  background-color: transparent;
+}
+.title{
+  border: none;
+  background-color: transparent;
+  color: gray;
+  font-family: 'Times New Roman', Times, serif;
+}
+/* .tenor-gif-embed{
+  display: none;
+} */
+form{
+display: flex;
+flex-wrap: wrap;
+padding-inline: 20px;
+align-items: center;
+}
+.D-none{
+  display: none;
+}
+.form_button{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-inline: 20px;
 
+}
+#change{
+  border: none;
+}
 main {
   margin-inline: 10px;
+}
+.card:hover{
+  transform: scale(1,1.1);
+  overflow: hidden;
+
 }
 
 #cardFind img {

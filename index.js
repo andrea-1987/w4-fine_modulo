@@ -3,6 +3,19 @@ import { fetchCreateCard, fetchGet, fetchDelete, fetchPut } from "./api.js";
 import { detailPage } from "./detail.js";
 
 const form = document.getElementById("form");
+const enableForm = document.querySelector(".title");
+const loader=document.querySelector(".tenor-gif-embed")
+
+function toggleForm() {
+  
+  setTimeout(() => {
+    loader.classList.toggle("D-none")
+
+      }, 1000);
+}
+
+enableForm.addEventListener("click", toggleForm);
+loader.addEventListener("click",toggleForm)
 
 
 document.addEventListener("DOMContentLoaded", () => {

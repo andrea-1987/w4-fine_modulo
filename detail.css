@@ -5,6 +5,9 @@
 body {
   background-color: black;
 }
+nav img{
+  width: 130px;
+}
 main {
   display: flex;
   margin-top: 20px;
