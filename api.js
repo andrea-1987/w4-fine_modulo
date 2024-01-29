@@ -4,6 +4,8 @@ export const key =
 
 import { cardCreater } from "./components.js";
 
+    
+
 export async function fetchCreateCard() {
 
   const urlImg = document.getElementById("urlImg").value;
@@ -53,6 +55,7 @@ export async function fetchGet() {
     }
 
     const data = await response.json();
+    const cardFind=document.querySelector(".cardFind")
     for (let dati of data) {
     cardCreater(dati)
   }

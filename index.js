@@ -5,7 +5,6 @@ import { detailPage } from "./detail.js";
 const form = document.getElementById("form");
 
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("form");
   form.addEventListener("submit", event => {
@@ -42,6 +41,6 @@ fetchPut()
 window.location.reload()
 })
 
-// document.addEventListener("DOMContentLoaded", detailPage)
+
 
 
