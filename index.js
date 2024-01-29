@@ -1,18 +1,11 @@
 
 import { fetchCreateCard, fetchGet, fetchDelete, fetchPut } from "./api.js";
 import { detailPage } from "./detail.js";
+import { toggleForm } from "./helper.js";
 
 const form = document.getElementById("form");
 const enableForm = document.querySelector(".title");
-const loader=document.querySelector(".tenor-gif-embed")
 
-function toggleForm() {
-  
-  setTimeout(() => {
-    loader.classList.toggle("D-none")
-
-      }, 1000);
-}
 
 enableForm.addEventListener("click", toggleForm);
 loader.addEventListener("click",toggleForm)
@@ -53,7 +46,6 @@ change.addEventListener("click", event=>{
 fetchPut()
 window.location.reload()
 })
-
 
 
 
