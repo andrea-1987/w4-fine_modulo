@@ -1,5 +1,4 @@
 
-const loader=document.querySelector(".tenor-gif-embed")
 
 export function toggleForm() {
   

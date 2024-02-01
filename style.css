@@ -1,6 +1,7 @@
 * {
   object-fit: cover;
   font-family: Arial, Helvetica, sans-serif;
+  color:purple
 }
 body {
   background-color: black;
@@ -10,33 +11,43 @@ nav {
   text-align: center;
   margin-inline: 10px;
   margin-block: 50px;
-  color: white;
+  color: purple;
 }
 nav img{
   width: 100px;
   background-color: transparent;
 }
+.nav-link{
+  color: purple !important;
+}
 .title{
   border: none;
   background-color: transparent;
-  color: gray;
   font-family: 'Times New Roman', Times, serif;
 }
 
 form{
 display: flex;
-flex-wrap: wrap;
+justify-content: space-around;
 padding-inline: 20px;
 align-items: center;
 }
 .D-none{
   display: none;
 }
+.form-input{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-inline-end: 20 px;
+}
+.form-description{
+  display: flex;
+}
 .form_button{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding-inline: 20px;
+gap: 20px;
 
 }
 #change{

@@ -88,9 +88,9 @@ export const createCardDetail = (data) => {
   const cardBodyDiv = document.createElement('div');
   cardBodyDiv.className = 'card-body';
 
-  const titleH5 = document.createElement('h5');
-  titleH5.className = 'card-title mx-5 my-5';
-  titleH5.textContent = `Title: ${data.name}`;
+  const titleH2 = document.createElement('h2');
+  titleH2.className = 'card-title mx-5 my-5';
+  titleH2.textContent = `Title: ${data.name}`;
 
   const descriptionP = document.createElement('p');
   descriptionP.className = 'card-text mx-5 my-5';
@@ -109,8 +109,8 @@ export const createCardDetail = (data) => {
   cardDetail.appendChild(img);
   cardDetail.appendChild(cardBodyDiv);
 
-  cardBodyDiv.appendChild(titleH5);
-  cardBodyDiv.appendChild(descriptionP);
+  sideBar.appendChild(titleH2);
+  sideBar.appendChild(descriptionP);
 
   detailLogo.appendChild(logoImg);
 };

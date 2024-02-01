@@ -4,10 +4,14 @@
 }
 body {
   background-color: black;
+  color:purple
 }
 nav img{
   width: 100px;
   aspect-ratio: 1/1;
+}
+.nav-link{
+  color: purple !important;
 }
 main {
   display: flex;
@@ -16,17 +20,11 @@ main {
 aside {
   width: 35%;
 }
-.sideBar a {
-  text-decoration: none;
+img{
+  max-width: 1200px;
+  aspect-ratio: 4/3;
 }
-.cardDetail {
-  width: 100%;
-  display: flex;
-}
-.cardDetail img {
-  width:500 px ;
-}
-.cardDetail h5,p{
+.sideBar h2,p{
  font-size: xx-large;
  font-family: 'Times New Roman', Times, serif;
 }
